@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/home-repairs-hammer-saw-and-drill-by-prettysleepy-art-12354.mp3-abcdee41de22addcbaa0656e05bc3b70.mp3str"
+
+[deps]
+
+source_file="res://audio/home-repairs-hammer-saw-and-drill-by-prettysleepy-art-12354.mp3"
+dest_files=[ "res://.import/home-repairs-hammer-saw-and-drill-by-prettysleepy-art-12354.mp3-abcdee41de22addcbaa0656e05bc3b70.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

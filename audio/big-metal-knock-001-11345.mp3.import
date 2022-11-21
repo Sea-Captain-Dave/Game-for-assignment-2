@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/big-metal-knock-001-11345.mp3-e24c976c23844e891b04d3ce99acfd78.mp3str"
+
+[deps]
+
+source_file="res://audio/big-metal-knock-001-11345.mp3"
+dest_files=[ "res://.import/big-metal-knock-001-11345.mp3-e24c976c23844e891b04d3ce99acfd78.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

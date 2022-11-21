@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://StationaryPlatform/Flamer0.png" type="Texture" id=1]
+[ext_resource path="res://StationaryPlatform/Flamer1.png" type="Texture" id=2]
+[ext_resource path="res://StationaryPlatform/Flamer.gd" type="Script" id=3]
+[ext_resource path="res://StationaryPlatform/Burn.gd" type="Script" id=4]
+[ext_resource path="res://StationaryPlatform/Idle.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "on",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.5, 18 )
+
+[node name="Flamer" type="StaticBody2D"]
+script = ExtResource( 3 )
+
+[node name="Burn" type="AnimatedSprite" parent="."]
+position = Vector2( 1, 0 )
+frames = SubResource( 1 )
+animation = "on"
+offset = Vector2( 0, -147 )
+script = ExtResource( 4 )
+
+[node name="FireZone" type="Area2D" parent="Burn"]
+visible = false
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Burn/FireZone"]
+polygon = PoolVector2Array( -4, -38, -30, -62, -51, -109, -48, -185, -38, -236, -24, -270, -9, -290, -5, -292, 3, -285, 30, -237, 43, -183, 49, -123, 47, -90, 40, -74, 30, -60, 18, -48, 8, -39 )
+
+[node name="Idle" type="Sprite" parent="."]
+position = Vector2( 0, -21 )
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.5, -18 )
+shape = SubResource( 2 )

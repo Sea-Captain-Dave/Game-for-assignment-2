@@ -1,0 +1,77 @@
+[gd_resource type="TileSet" load_steps=5 format=2]
+
+[ext_resource path="res://TilesTransparent2.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 52.5, 52.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 52.5, 52.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 52.5, 57 )
+
+[resource]
+0/name = "ConvayAlone"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 443, 1867, 104, 114 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 52.4465, 57.0441 )
+0/navigation_offset = Vector2( 52.4465, 57.0441 )
+0/shape_offset = Vector2( 52.4465, 57.044 )
+0/shape_transform = Transform2D( 1, 0, 0, 1.09524, 52.4465, 57.044 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1.09524, 52.4465, 57.044 )
+} ]
+0/z_index = 0
+1/name = "ConvayEndLeft"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 577, 1862, 104, 113 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 52.2838, 56.7042 )
+1/navigation_offset = Vector2( 52.2838, 56.7042 )
+1/shape_offset = Vector2( 52.2839, 56.7044 )
+1/shape_transform = Transform2D( 0.980953, 0, 0, 1.08571, 52.2839, 56.7044 )
+1/shape = SubResource( 4 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 0.980953, 0, 0, 1.08571, 52.2839, 56.7044 )
+} ]
+1/z_index = 0
+2/name = "ConvayMid"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 757, 1860, 104, 113 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 52.4765, 56.8236 )
+2/navigation_offset = Vector2( 52.4765, 56.8236 )
+2/shape_offset = Vector2( 52.4765, 56.8236 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 52.4765, 56.8236 )
+2/shape = SubResource( 5 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 52.4765, 56.8236 )
+} ]
+2/z_index = 0

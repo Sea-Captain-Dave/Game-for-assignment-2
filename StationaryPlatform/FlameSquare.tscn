@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TilesTransparent2.png" type="Texture" id=1]
+[ext_resource path="res://StationaryPlatform/FlameSquare.gd" type="Script" id=2]
+[ext_resource path="res://StationaryPlatform/ActiveBurn.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 52, 52 )
+
+[node name="FlameSquare" type="StaticBody2D"]
+scale = Vector2( 1.05, 1.05 )
+script = ExtResource( 2 )
+
+[node name="ActiveBurn" type="Sprite" parent="."]
+position = Vector2( 53, -76 )
+scale = Vector2( 0.498376, 0.465982 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 3552.45, 1659.35, 308.299, 779.019 )
+script = ExtResource( 3 )
+
+[node name="FireZone" type="Area2D" parent="ActiveBurn"]
+visible = false
+position = Vector2( -4.13419, 276.074 )
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ActiveBurn/FireZone"]
+polygon = PoolVector2Array( -108.231, -67.9117, -142.341, -151.606, -126.289, -411.273, -88.1655, -565.785, -33.9896, -655.917, -21.9505, -664.501, 6.14075, -662.355, 34.232, -625.873, 86.4014, -518.573, 122.519, -387.667, 142.584, -278.22, 146.597, -151.606, 128.538, -70.0577, 112.486, -52.8897 )
+
+[node name="Idle" type="Sprite" parent="."]
+position = Vector2( 51, 52 )
+scale = Vector2( 0.504854, 0.472727 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 585.904, 84.8539, 206.865, 220.919 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 52, 52 )
+shape = SubResource( 1 )

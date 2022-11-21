@@ -1,0 +1,191 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Art/buttons/ArrowButton.png" type="Texture" id=1]
+[ext_resource path="res://MainHUD.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Mobs/Jar.png" type="Texture" id=4]
+[ext_resource path="res://Mobs/HDD.png" type="Texture" id=5]
+[ext_resource path="res://Mobs/CD.png" type="Texture" id=6]
+[ext_resource path="res://audio/factory-area-10410.mp3" type="AudioStream" id=7]
+[ext_resource path="res://audio/home-repairs-hammer-saw-and-drill-by-prettysleepy-art-12354.mp3" type="AudioStream" id=8]
+[ext_resource path="res://audio/bleeps-and-bloops-classic-arcade-game-116838.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Art/buttons/zoomOut.png" type="Texture" id=10]
+[ext_resource path="res://Art/buttons/zoomIn.png" type="Texture" id=11]
+[ext_resource path="res://Art/buttons/pause.png" type="Texture" id=12]
+
+[node name="MainHUD" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="HUD"]
+visible = false
+margin_left = 28.0
+margin_top = 9.0
+margin_right = 359.0
+margin_bottom = 78.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Data found=0TB"
+
+[node name="Deaths" type="Label" parent="HUD"]
+visible = false
+margin_left = 24.0
+margin_top = 83.0
+margin_right = 588.0
+margin_bottom = 224.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Opperating Unit-TR-0
+"
+
+[node name="leftBot" type="Control" parent="HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Right" type="TouchScreenButton" parent="HUD/leftBot"]
+visible = false
+position = Vector2( -235, -240 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+action = "ui_right"
+
+[node name="resume" type="Button" parent="HUD/leftBot"]
+pause_mode = 2
+visible = false
+margin_left = -925.0
+margin_top = -305.0
+margin_right = -580.0
+margin_bottom = -174.0
+custom_fonts/font = ExtResource( 3 )
+text = "Resume"
+
+[node name="Left" type="TouchScreenButton" parent="HUD/leftBot"]
+visible = false
+position = Vector2( -285, -33 )
+rotation = -3.14159
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+passby_press = true
+action = "ui_left"
+
+[node name="leftTop2" type="Control" parent="HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="zoomIn" type="TouchScreenButton" parent="HUD/leftTop2"]
+visible = false
+position = Vector2( -163, 28 )
+normal = ExtResource( 10 )
+action = "ui_zoom_in"
+
+[node name="ZoomOut" type="TouchScreenButton" parent="HUD/leftTop2"]
+visible = false
+position = Vector2( -286, 28 )
+normal = ExtResource( 11 )
+passby_press = true
+action = "ui_zoom_out"
+
+[node name="Pause" type="TouchScreenButton" parent="HUD/leftTop2"]
+visible = false
+position = Vector2( -407, 26 )
+normal = ExtResource( 12 )
+passby_press = true
+action = "ui_stop"
+
+[node name="Mute" type="Button" parent="HUD/leftTop2"]
+visible = false
+margin_left = -527.0
+margin_top = 42.0
+margin_right = -339.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mute"
+
+[node name="botRignt" type="Control" parent="HUD"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Up" type="TouchScreenButton" parent="HUD/botRignt"]
+visible = false
+position = Vector2( 56, -254 )
+rotation = -1.5708
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+action = "ui_up"
+
+[node name="Down" type="TouchScreenButton" parent="HUD/botRignt"]
+visible = false
+position = Vector2( 258, -234 )
+rotation = 1.5708
+scale = Vector2( 2, 2 )
+normal = ExtResource( 1 )
+action = "ui_down"
+
+[node name="quit" type="Button" parent="HUD/botRignt"]
+pause_mode = 2
+visible = false
+margin_left = 486.0
+margin_top = -307.0
+margin_right = 831.0
+margin_bottom = -176.0
+custom_fonts/font = ExtResource( 3 )
+text = "Quit"
+
+[node name="HDD" type="Sprite" parent="HUD"]
+visible = false
+position = Vector2( 42.75, 162.387 )
+scale = Vector2( 0.265, 0.265 )
+texture = ExtResource( 5 )
+
+[node name="CD" type="Sprite" parent="HUD"]
+visible = false
+position = Vector2( 78, 162 )
+scale = Vector2( 0.265, 0.265 )
+texture = ExtResource( 6 )
+
+[node name="Jar" type="Sprite" parent="HUD"]
+visible = false
+position = Vector2( 109, 163 )
+scale = Vector2( 0.580956, 0.580956 )
+texture = ExtResource( 4 )
+
+[node name="bloops" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 9 )
+
+[node name="factory" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 7 )
+
+[node name="hammer" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 8 )
+
+[node name="Un-Mute" type="Button" parent="."]
+visible = false
+margin_left = 415.0
+margin_top = 42.0
+margin_right = 730.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 3 )
+text = "Un-Mute"
+
+[connection signal="pressed" from="HUD/leftBot/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HUD/leftTop2/Mute" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HUD/botRignt/quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="HUD/bloops" to="." method="_on_bloops_finished"]
+[connection signal="finished" from="HUD/factory" to="." method="_on_factory_finished"]
+[connection signal="finished" from="HUD/hammer" to="." method="_on_hammer_finished"]
+[connection signal="pressed" from="Un-Mute" to="." method="_on_UnMute_pressed"]

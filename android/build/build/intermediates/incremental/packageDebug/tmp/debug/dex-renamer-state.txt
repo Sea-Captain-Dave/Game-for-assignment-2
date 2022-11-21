@@ -1,0 +1,4 @@
+#Thu Nov 17 10:29:39 NZDT 2022
+base.0=C\:\\Users\\lands\\Class Stuff\\Game dev\\GadotGames\\MainGame2\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

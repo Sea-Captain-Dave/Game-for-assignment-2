@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/CutsceneStuff.png" type="Texture" id=1]
+[ext_resource path="res://JetPack.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 71, 67.5 )
+
+[node name="JetPack" type="StaticBody2D"]
+position = Vector2( 0, 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1140.99, 296.889, 141.009, 133.023 )
+
+[node name="JetPackPickup" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JetPackPickup"]
+position = Vector2( -1, -0.5 )
+shape = SubResource( 28 )
+
+[connection signal="area_entered" from="JetPackPickup" to="." method="_on_JetPackPickup_area_entered"]
+[connection signal="body_entered" from="JetPackPickup" to="." method="_on_JetPackPickup_body_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MiscScenes/TapChecker.gd" type="Script" id=5]
+[ext_resource path="res://Art/MainMenuBackground.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 92, 45 )
+
+[node name="BossLvl" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1754, 415 )
+texture = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1783, 285 )
+current = true
+
+[node name="TapChecker" type="TouchScreenButton" parent="."]
+position = Vector2( 1675, 33 )
+shape = SubResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 1681.0
+margin_top = 36.0
+margin_right = 1849.0
+margin_bottom = 111.0
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1689.0
+margin_top = 271.0
+margin_right = 1848.0
+margin_bottom = 346.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="TapChecker" to="TapChecker" method="_on_TapChecker_pressed"]
+[connection signal="pressed" from="Play" to="TapChecker" method="_on_Play_pressed"]
+[connection signal="pressed" from="Button" to="TapChecker" method="_on_Button_pressed"]

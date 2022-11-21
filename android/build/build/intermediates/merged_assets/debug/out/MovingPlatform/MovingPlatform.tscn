@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TilesTransparent.png" type="Texture" id=1]
+[ext_resource path="res://MovingPlatform/MovingPlatform.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 224, 64 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 224, -256 )
+scale = Vector2( 1.0591, 1.05567 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1147.48, 248.925, 423.323, 485.722 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 224, -64 )
+shape = SubResource( 1 )

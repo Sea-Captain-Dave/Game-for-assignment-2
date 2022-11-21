@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\lands\\Class Stuff\\Game dev\\GadotGames\\MainGame2\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\lands\\Class Stuff\\Game dev\\GadotGames\\MainGame2\\android\\build\\res\\values-sk\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "73",
+                        "endOffsets": "184"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\lands\\.gradle\\caches\\transforms-3\\f468396e8f36529b92fb98842a149f3b\\transformed\\core-1.2.0\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "132",
+                        "endColumns": "100",
+                        "endOffsets": "228"
+                    }
+                }
+            ]
+        }
+    ]
+}

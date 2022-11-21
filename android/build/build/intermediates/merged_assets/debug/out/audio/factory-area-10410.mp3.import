@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/factory-area-10410.mp3-d585744aa204e682d96f0de0a1123d61.mp3str"
+
+[deps]
+
+source_file="res://audio/factory-area-10410.mp3"
+dest_files=[ "res://.import/factory-area-10410.mp3-d585744aa204e682d96f0de0a1123d61.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

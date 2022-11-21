@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://TilesTransparent2.png" type="Texture" id=1]
+[ext_resource path="res://Tilemaps/Spinner.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 52.5, 52.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 47.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 52.5, 52.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 52.5, 57 )
+
+[node name="ConverTileSet" type="Node2D"]
+
+[node name="ConvayAlone" type="Sprite" parent="."]
+position = Vector2( 367.5, 157.5 )
+scale = Vector2( 1, 0.913043 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 443.167, 1867, 104.893, 114.088 )
+
+[node name="ConvayAlone" type="StaticBody2D" parent="ConvayAlone"]
+position = Vector2( 52.5, 57.5 )
+scale = Vector2( 1, 1.09524 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayAlone/ConvayAlone"]
+position = Vector2( -52.5, -52.5 )
+shape = SubResource( 3 )
+
+[node name="ConvayZone" type="Area2D" parent="ConvayAlone"]
+position = Vector2( 52.5, 57.5 )
+scale = Vector2( 1, 1.09524 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayAlone/ConvayZone"]
+position = Vector2( -53, -116 )
+shape = SubResource( 2 )
+
+[node name="Spinner" type="Sprite" parent="ConvayAlone"]
+position = Vector2( 17.5, -19.1667 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 392.189, 1889.08, 34.0975, 35.6473 )
+script = ExtResource( 2 )
+
+[node name="Spinner2" type="Sprite" parent="ConvayAlone"]
+position = Vector2( -17.5, -19.1667 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 392.189, 1889.08, 34.0975, 35.6473 )
+script = ExtResource( 2 )
+
+[node name="Spinner3" type="Sprite" parent="ConvayAlone"]
+position = Vector2( -17.5, 18.0714 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 392.189, 1889.08, 34.0975, 35.6473 )
+script = ExtResource( 2 )
+
+[node name="Spinner4" type="Sprite" parent="ConvayAlone"]
+position = Vector2( 17.5, 18.0714 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 392.189, 1889.08, 34.0975, 35.6473 )
+script = ExtResource( 2 )
+
+[node name="ConvayEndLeft" type="Sprite" parent="."]
+position = Vector2( 262.5, 157.5 )
+scale = Vector2( 1.01942, 0.921053 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 577.171, 1862.33, 104.568, 113.408 )
+
+[node name="ConvayLEftEnd" type="StaticBody2D" parent="ConvayEndLeft"]
+position = Vector2( -43.6524, 58.0857 )
+scale = Vector2( 0.980953, 1.08571 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayEndLeft/ConvayLEftEnd"]
+position = Vector2( 44.5, -53.5 )
+shape = SubResource( 4 )
+
+[node name="ConvayZone" type="Area2D" parent="ConvayEndLeft"]
+position = Vector2( 82.8905, 57 )
+scale = Vector2( 0.980953, 1.08571 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayEndLeft/ConvayZone"]
+position = Vector2( -86, -116 )
+shape = SubResource( 2 )
+
+[node name="ConvayMid" type="Sprite" parent="."]
+position = Vector2( 472.5, 157.5 )
+scale = Vector2( 1, 0.921053 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 757.946, 1860.12, 104.953, 113.647 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ConvayZone" type="Area2D" parent="ConvayMid"]
+position = Vector2( 294.5, 57 )
+scale = Vector2( 1, 1.08571 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayMid/ConvayZone"]
+position = Vector2( -293, -116 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ConvayMid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConvayMid/StaticBody2D"]
+position = Vector2( 0, -1.52588e-05 )
+shape = SubResource( 5 )

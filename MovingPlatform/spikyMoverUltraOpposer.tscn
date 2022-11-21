@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TilesTransparent2.png" type="Texture" id=1]
+[ext_resource path="res://MovingPlatform/spikyMoverUltraOpposer.gd" type="Script" id=2]
+
+[node name="spikyMover" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="SpikeKill" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpikeKill"]
+visible = false
+polygon = PoolVector2Array( -47, 132, 51, 132, 106, 91, 134, 46, 132, -49, 99, -100, 51, -141, -50, -140, -85, -110, -137, -53, -138, 48, -99, 95 )
+
+[node name="texture" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="texture"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 900.834, 764.861, 104.813, 113.684 )
+
+[node name="Sprite2" type="Sprite" parent="texture"]
+position = Vector2( 0, -108 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 31.0455, 1093.55, 107.88, 113.25 )
+
+[node name="Sprite3" type="Sprite" parent="texture"]
+position = Vector2( 1, 108 )
+texture = ExtResource( 1 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 31.0455, 1093.55, 107.88, 113.25 )
+
+[node name="Sprite4" type="Sprite" parent="texture"]
+position = Vector2( 100, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 140.106, 1208.06, 104.486, 107.863 )
+
+[node name="Sprite5" type="Sprite" parent="texture"]
+position = Vector2( -98, -3 )
+texture = ExtResource( 1 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 140.106, 1208.06, 104.486, 107.863 )
+
+[node name="texture2" type="Node2D" parent="."]
+rotation = 0.785398
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="texture2"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 900.834, 764.861, 104.813, 113.684 )
+
+[node name="Sprite2" type="Sprite" parent="texture2"]
+position = Vector2( 0, -108 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 31.0455, 1093.55, 107.88, 113.25 )
+
+[node name="Sprite3" type="Sprite" parent="texture2"]
+position = Vector2( 1, 108 )
+texture = ExtResource( 1 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 31.0455, 1093.55, 107.88, 113.25 )
+
+[node name="Sprite4" type="Sprite" parent="texture2"]
+position = Vector2( 100, 1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 140.106, 1208.06, 104.486, 107.863 )
+
+[node name="Sprite5" type="Sprite" parent="texture2"]
+position = Vector2( -98, -3 )
+texture = ExtResource( 1 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 140.106, 1208.06, 104.486, 107.863 )

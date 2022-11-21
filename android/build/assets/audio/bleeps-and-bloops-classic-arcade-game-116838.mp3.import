@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bleeps-and-bloops-classic-arcade-game-116838.mp3-1f3f5075d06f0b9f0b40351554961b7e.mp3str"
+
+[deps]
+
+source_file="res://audio/bleeps-and-bloops-classic-arcade-game-116838.mp3"
+dest_files=[ "res://.import/bleeps-and-bloops-classic-arcade-game-116838.mp3-1f3f5075d06f0b9f0b40351554961b7e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

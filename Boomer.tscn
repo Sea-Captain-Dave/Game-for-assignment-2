@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TilesTransparent2.png" type="Texture" id=1]
+[ext_resource path="res://Art/Boomsmoke.png" type="Texture" id=2]
+[ext_resource path="res://Art/Boom.png" type="Texture" id=3]
+[ext_resource path="res://MiscScenes/Boomer.gd" type="Script" id=4]
+[ext_resource path="res://boom.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53, 0 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 44, 96 )
+
+[node name="Boomer" type="KinematicBody2D"]
+script = ExtResource( 4 )
+
+[node name="barrel" type="Sprite" parent="."]
+position = Vector2( 333, 357 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 236.555, 903.295, 106.262, 209.957 )
+
+[node name="boom" type="Sprite" parent="."]
+visible = false
+position = Vector2( 334, 358 )
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="blast" type="Area2D" parent="boom"]
+position = Vector2( -334, -358 )
+monitoring = false
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boom/blast"]
+polygon = PoolVector2Array( 337, 489, 271, 476, 222, 439, 434, 433, 208, 414, 193, 373, 200, 315, 247, 252, 324, 221, 393, 235, 441, 269, 210, 343, 466, 316, 472, 385, 450, 434, 405, 476 )
+
+[node name="smoke" type="Sprite" parent="boom"]
+visible = false
+position = Vector2( -11, -297 )
+scale = Vector2( 1.55054, 1.55054 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 333, 462 )
+shape = SubResource( 1 )
+
+[node name="Sensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+position = Vector2( 333, 358 )
+shape = SubResource( 4 )
+
+[connection signal="area_entered" from="Sensor" to="." method="_on_hitBox_area_entered"]

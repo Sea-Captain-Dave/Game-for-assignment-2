@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://MiscScenes/cooler.gd" type="Script" id=1]
+[ext_resource path="res://MiscScenes/Fans.gd" type="Script" id=2]
+[ext_resource path="res://Art/Boss.png" type="Texture" id=3]
+[ext_resource path="res://Art/BrokenColer.png" type="Texture" id=4]
+[ext_resource path="res://MiscScenes/BigFan.gd" type="Script" id=5]
+
+[node name="cooler" type="StaticBody2D"]
+position = Vector2( 346, 865 )
+scale = Vector2( 0.717288, 0.714509 )
+script = ExtResource( 1 )
+
+[node name="leftCooler" type="Sprite" parent="."]
+position = Vector2( -44.6125, 54.5829 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 190.783, 1002.63, 577.931, 678.586 )
+
+[node name="bigFanLeft_0" type="Sprite" parent="leftCooler"]
+position = Vector2( -105.955, 156.751 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1255.96, 1166.96, 161.669, 159.932 )
+script = ExtResource( 5 )
+
+[node name="bigFanLeft_1" type="Sprite" parent="leftCooler"]
+position = Vector2( 100.378, 156.751 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1255.96, 1166.96, 161.669, 159.932 )
+script = ExtResource( 5 )
+
+[node name="FanLeft_0" type="Sprite" parent="leftCooler"]
+position = Vector2( 98.9839, -79.7749 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_1" type="Sprite" parent="leftCooler"]
+position = Vector2( 98.9839, -145.554 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_2" type="Sprite" parent="leftCooler"]
+position = Vector2( -104.561, -145.554 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_3" type="Sprite" parent="leftCooler"]
+position = Vector2( -103.166, -79.7749 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_5" type="Sprite" parent="leftCooler"]
+position = Vector2( -103.166, -79.7749 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_4" type="Sprite" parent="leftCooler"]
+position = Vector2( -103.166, -79.7749 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="dead" type="Sprite" parent="."]
+visible = false
+position = Vector2( -47.4008, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 285.352, -103.3, 583.619, 789.584 )
+
+[node name="bigFanLeft_2" type="Sprite" parent="dead"]
+position = Vector2( -103.166, 211.334 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1255.96, 1166.96, 161.669, 159.932 )
+
+[node name="FanLeft_4" type="Sprite" parent="dead"]
+position = Vector2( -100.378, -25.1921 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+script = ExtResource( 2 )
+
+[node name="FanLeft_6" type="Sprite" parent="dead"]
+position = Vector2( -101.772, -92.3711 )
+scale = Vector2( 1.39414, 1.39956 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 1467.15, 995.941, 37.865, 38.1281 )
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -110.137, 240.725, -197.968, -50.3843, 61.3422, -142.755, 129.655, 65.7794, 186.815, 225.329, 61.3422, 233.727, 55.7656, 205.736, 133.837, 197.338, 39.0359, -106.367, -161.72, -33.5895, -103.166, 222.53, 52.9773, 204.336, 61.3422, 233.727 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

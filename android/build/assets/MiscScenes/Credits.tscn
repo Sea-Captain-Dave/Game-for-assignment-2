@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://MiscScenes/Credits.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 53, 196 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 458, 108 )
+current = true
+
+[node name="PlayAgain" type="Button" parent="Camera2D"]
+anchor_left = 0.059
+anchor_top = 1.635
+anchor_right = 0.1
+anchor_bottom = 1.909
+margin_left = -497.0
+margin_top = 166.0
+margin_right = -101.0
+margin_bottom = 241.0
+custom_fonts/font = ExtResource( 1 )
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="Camera2D"]
+anchor_left = 0.059
+anchor_top = 1.635
+anchor_right = 0.1
+anchor_bottom = 1.909
+margin_left = 77.0
+margin_top = 168.0
+margin_right = 425.768
+margin_bottom = 243.0
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[node name="Label" type="Label" parent="Camera2D"]
+margin_left = -504.0
+margin_top = -300.0
+margin_right = 648.0
+margin_bottom = -15.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Credits
+Fonts: Swansea by Roger White
+Audio: Pixabay
+The rest: Ben"
+
+[connection signal="pressed" from="Camera2D/PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="Camera2D/Quit" to="." method="_on_Quit_pressed"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://RobotParts/Wheelbase.png" type="Texture" id=2]
+[ext_resource path="res://RobotParts/Wheel.png" type="Texture" id=3]
+[ext_resource path="res://RobotParts/RobotBody.png" type="Texture" id=4]
+[ext_resource path="res://Mobs/wheelBase.gd" type="Script" id=5]
+[ext_resource path="res://RobotParts/Engine.png" type="Texture" id=6]
+[ext_resource path="res://audio/big-metal-knock-001-11345.mp3" type="AudioStream" id=7]
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.045, 0.045 )
+script = ExtResource( 1 )
+
+[node name="wheelBase" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="wheel" type="Sprite" parent="wheelBase"]
+position = Vector2( -614, 1858 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 117.161, 18.5274, 341.666, 342.253 )
+
+[node name="wheel2" type="Sprite" parent="wheelBase"]
+position = Vector2( -190, 1858 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 117.161, 18.5274, 341.666, 342.253 )
+
+[node name="wheel3" type="Sprite" parent="wheelBase"]
+position = Vector2( 340, 1858 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 117.161, 18.5274, 341.666, 342.253 )
+
+[node name="wheel4" type="Sprite" parent="wheelBase"]
+position = Vector2( 770, 1858 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 117.161, 18.5274, 341.666, 342.253 )
+
+[node name="wheelBase" type="Sprite" parent="wheelBase"]
+position = Vector2( 66.6666, 755.556 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 12.1118, 1201.77, 1875.59, 1986.35 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 400 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="ScanZonePlayer" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScanZonePlayer"]
+polygon = PoolVector2Array( 0, 1800, -542.857, 1714.29, -485.714, -200, -285.714, -1142.86, 85.7143, -1142.86, 400, -428.571, 771.429, 1457.14, 542.857, 1828.57 )
+
+[node name="BodyMain" type="StaticBody2D" parent="."]
+
+[node name="Engin" type="Sprite" parent="BodyMain"]
+position = Vector2( -1970, -1100 )
+scale = Vector2( 5.79703, 5.79703 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Body" type="Sprite" parent="BodyMain"]
+texture = ExtResource( 4 )
+
+[node name="ColBox" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 650, 1950, 750, 1875, 1000, 1725, 525, -600, 150, -1275, -400, -1250, -675, -25, -700, 1250, -875, 1725, -475, 2025, 575, 2025, 625, 1975 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[connection signal="area_entered" from="ScanZonePlayer" to="." method="_on_ScanZonePlayer_area_entered"]
